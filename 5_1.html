@@ -1,0 +1,45 @@
+2.	<!DOCTYPE html>
+3.	<html>
+4.	<head>
+5.	    <title>Feedback Form</title>
+6.	    <script>
+7.	        function validateComments() {
+8.	            var comments = document.getElementById("comments").value;
+9.	            if (comments.length > 200) {
+10.	                alert("Comments should not exceed 200 characters.");
+11.	                return false;
+12.	            }
+13.	            return true;
+14.	        }
+15.	    </script>
+16.	</head>
+17.	<body>
+18.	    <h2>Feedback Form</h2>
+19.	
+20.	    <form action="FeedbackServlet" method="post" onsubmit="return validateComments()">
+21.	
+22.	        <label>Name:</label><br>
+23.	        <input type="text" name="name" required><br><br>
+24.	
+25.	        <label>Email:</label><br>
+26.	        <input type="email" name="email" required><br><br>
+27.	
+28.	        <label>Rating:</label><br>
+29.	        <select name="rating" required>
+30.	            <option value="">Select</option>
+31.	            <option value="1">1 - Poor</option>
+32.	            <option value="2">2 - Fair</option>
+33.	            <option value="3">3 - Good</option>
+34.	            <option value="4">4 - Very Good</option>
+35.	            <option value="5">5 - Excellent</option>
+36.	        </select><br><br>
+37.	
+38.	        <label>Comments (Max 200 characters):</label><br>
+39.	        <textarea id="comments" name="comments" rows="4" cols="40" required></textarea><br><br>
+40.	
+41.	        <input type="submit" value="Submit Feedback">
+42.	
+43.	    </form>
+44.	</body>
+45.	</html>
+
